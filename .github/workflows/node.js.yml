@@ -34,7 +34,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
       run: |
         npm install -g gh-pages
-        gh-pages -d out -b gh-pages --repo https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/amanmehtacode/amanmehtacode.github.io.git
+        gh-pages -d out -b gh-pages --repo https://x-access-token:${{ secrets.GH_PAGES_TOKEN }}@github.com/amanmehtacode/amanmehtacode.github.io.git
