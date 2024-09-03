@@ -1,38 +1,27 @@
-name: Node.js CI
-
-#
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Use Node.js 18.x
+    - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18.x'
-        cache: 'npm'
-
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run export --if-present
-
-    - name: Set up Git configuration
-      run: |
-        git config user.name "amanmehtacode"
-        git config user.email "amehta20@nyit.edu"
+        node-version: '16'
+    - run: npm install
+    - run: npm run build
+    - run: npm run export
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      run: npm run deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+        GH_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+      run: |
+        npm install -g gh-pages
+        gh-pages -d out -b gh-pages --repo https://x-access-token:${{ secrets.GH_PAGES_TOKEN }}@github.com/amanmehtacode/amanmehtacode.github.io.git
