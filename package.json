@@ -9,6 +9,7 @@
     "start": "next start",
     "export": "next export",
     "setup": "npm run build && npm start"
+    "test": "echo \"No tests available\""
   },
   "engines": {
     "node": ">=16.x"
