@@ -297,9 +297,10 @@ function Education() {
           <div className=" text-lg md:text-xl text-left font-bold leading-tight">
             Highschool<sup> 11 - 12 th</sup> (ICSE)
           </div>
-          <div className=" text-sm md:text-base">AP Level Maths, Physics, Chemistry</div>
+          <div className=" text-sm md:text-base">
+            AP Level Maths, Physics, Chemistry
+          </div>
           <div className=" text-sm text-gray-400 mt-0.5">2017 - 2019</div>
- 
         </li>
       </ul>
     </>
