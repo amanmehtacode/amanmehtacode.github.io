@@ -642,7 +642,7 @@ function Resume() {
   return (
     <iframe
       className="h-full w-full"
-      src="./files/Aman-Mehta-Resume.pdf"
+      src="./files/ResumeSWE.pdf"
       title="aman mehta resume"
       frameBorder="0"
     ></iframe>
